@@ -1,0 +1,26 @@
+<app-header [showSearch]="true" (search)="onSearch($event)"></app-header>
+<div class="container">
+  <mat-progress-spinner mode="indeterminate" *ngIf="isLoading" color="primary"></mat-progress-spinner>
+  <div class="card-sort">
+  <mat-card *ngFor="let user of (searchQuery ? filteredUsers : users)" [@cardAppear]>
+    <img mat-card-image src="{{ user.avatar }}" alt="image for user">
+    <mat-card-header>
+      <mat-card-title>{{ user.first_name }} {{ user.last_name }}</mat-card-title>
+      <mat-card-subtitle >  <a href="mailto:{{ user.email }}">{{ user.email }}</a>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions>
+      <a mat-raised-button color="primary" routerLink="/user-detail/{{ user.id }}">
+        Details
+      </a>
+      <a class="icon-move" routerLink="/user-detail/{{ user.id }}"><mat-icon aria-hidden="false" aria-label="icon" >chevron_right</mat-icon>
+      </a>
+    </mat-card-actions>
+  </mat-card>
+</div>
+  <mat-paginator [length]="totalPages * 6" [pageSize]="6" [pageSizeOptions]="[6, 12, 18]" (page)="onPageChange($event)">
+  </mat-paginator>
+
+
+</div>
+<router-outlet></router-outlet>

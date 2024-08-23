@@ -1,0 +1,99 @@
+
+.container{
+  padding: 0 16px;
+}
+mat-card{
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  padding: 100px 0;
+  justify-content: space-around;
+}
+@media (max-width:600px) {
+  mat-card{
+    border: 0;
+    flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 0;
+  }
+}
+
+mat-card-header{
+  padding: 20px;
+}
+mat-card-title{
+  font-weight: bold;
+}
+mat-card-subtitle{
+margin: 10px 0 0;
+line-height: 1.5;
+color: #777;}
+
+img{
+  border-radius: 50%;
+}
+.actions{
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
+    border-top: 1px solid #e6d9d9;
+    margin-top: 20px;
+
+}
+.actions .contact-me{
+  color: white;
+  background: #03a9f4;
+  background-position:  right bottom;
+
+}
+.actions .contact-me:hover{
+  background-position: left bottom;
+  color: #03a9f4;
+  background: linear-gradient(to right, white 50%, #03a9f4 50%);
+  transition: 0.3s;
+  background-size: 200% 100%;
+
+}
+.actions button{
+  cursor: pointer;
+  font-weight: bold;
+  width: 100px;
+  padding: 10px 0;
+  color: #03a9f4;
+  background: linear-gradient(to right, #03a9f4 50%, white 50%);
+  background-size: 200% 100%;
+  background-position:  right bottom;
+  transition: 0.3s;
+  border: 1px solid #03a9f4;
+}
+
+.actions button:hover{
+  background-position: left bottom;
+  color: white;
+}
+::ng-deep .mdc-card__media:first-child{
+  height: 100%;
+}
+mat-card-actions{
+  padding: 20px;
+    border-top: 1px solid #e6e6e7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+mat-card-actions a{
+  text-decoration: unset;
+    color: #1787e0;
+    font-weight: bold;
+}
+@media (max-width: 768px) {
+  .card-grid {
+    flex-direction: column;
+  }
+
+  .mat-card {
+    flex: 1 0 100%;
+  }
+}

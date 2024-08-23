@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+  <div class="toolbar-content">
+    <mat-icon class="person-icon" (click)="goToUserList()" aria-hidden="false" aria-label=" person icon" fontIcon="person"></mat-icon>
+      <mat-form-field *ngIf="showSearch" appearance="fill" class="search-field">
+    <mat-label>Search By ID</mat-label>
+    <input matInput type="number" (input)="onSearch($event)" placeholder="ex: 1">
+    <mat-icon matSuffix >search</mat-icon>
+  </mat-form-field>
+</div>
+</mat-toolbar>
